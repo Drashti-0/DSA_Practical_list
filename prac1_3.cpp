@@ -1,27 +1,32 @@
-#include <iostream>
-#include <string>
+#include<iostream>
 using namespace std;
 
-int main() {
-    string sentence;
-    getline(cin, sentence);
+int main(){
 
-    string word = "";
-    string longest = "";
+    string s="This is CSPIT CHARUSAT";
 
-    for (int i = 0; i <= sentence.length(); i++) {
-        if (sentence[i] == ' ' || sentence[i] == '\0') {
-            if (word.length() > longest.length()) {
-                longest = word;
-            }
-            word = "";
-        } else {
-            word = word + sentence[i];
+   int l=s.length();
+   int count=0,s=0;
+
+   for(int i=0;i<s.length();i++){
+    if(s[i]==' '||s[i]=='\n'){
+        if(count>s){
+            s=count;
+            count=0;
+        }
+
+        else{
+            count++;
+
+            printf(" ",count);
         }
     }
+   }
 
-    cout << longest << endl;
-    cout << longest.length() << endl;
 
-    return 0;
+
+
+
 }
+
+
