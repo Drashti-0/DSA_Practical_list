@@ -11,6 +11,7 @@ int main() {
         cin >> a[i];
     }
 
+    
     h = h % n;
 
     for (int i = h; i < n; i++) {
