@@ -24,6 +24,7 @@ int main() {
             count2++;
         }
     }
+    
 
     int i = 0;
 
