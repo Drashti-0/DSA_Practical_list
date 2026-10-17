@@ -3,51 +3,40 @@ using namespace std;
 
 int main() {
     int n;
-    cin >> n;
 
-    int a[n];
+cout <<"Enter array size";
+cin>>n;
 
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-    }
+int arr[n];
 
-    int count0 = 0;
-    int count1 = 0;
-    int count2 = 0;
+cout<<"Enter array elements: ";
 
-    for (int i = 0; i < n; i++) {
-        if (a[i] == 0) {
-            count0++;
-        } else if (a[i] == 1) {
-            count1++;
-        } else {
-            count2++;
-        }
-    }
-    
+for (int i = 0; i < n; i++) {
+    cin >> arr[i];
+}
+cout<<endl;
+for (int i = 0; i < n; i++) {
+   cout<<arr[i]<<" ";
+}
+cout<<endl;
+cout<<"This is sorted array !!"<<endl;
 
-    int i = 0;
 
-    while (count0 > 0) {
-        a[i] = 0;
-        i++;
-        count0--;
-    }
+for(int i=1;i<n;i++)
+{
+    int key=arr[i];
+    int j;
 
-    while (count1 > 0) {
-        a[i] = 1;
-        i++;
-        count1--;
-    }
+   for(j=i-1;  j>=0 && arr[j]>key ;j--){
+    arr[j+1]=arr[j];
 
-    while (count2 > 0) {
-        a[i] = 2;
-        i++;
-        count2--;
-    }
+   }
 
-    for (int i = 0; i < n; i++) {
-        cout << a[i] << " ";
+   arr[j+1]=key;
+
+}
+ for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
     }
 
     return 0;
